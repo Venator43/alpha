@@ -1,2 +1,4 @@
 playground.py
 config/test2.yml
+__pycache__
+.env
