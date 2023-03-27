@@ -3,7 +3,7 @@ import json
 from . import command_interface
 
 class basic_command(command_interface.command_interface):
-	def __init__(self, API_KEY="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", API_URL = "https://api-inference.huggingface.co/models/bigscience/bloom", prompt="test"):
+	def __init__(self, API_KEY, API_URL, prompt):
 		self.API_URL = API_URL
 		self.headers = {"Authorization": f"Bearer {API_KEY}"}
 		self.prompt = 'Mohon nyalakan lampu atas\n>{"device_type" : "lamp", "command" : "on", "device_identifier" : "atas"}[EOS]\nMatikan lampu kamar depan\n>{"device_type" : "lamp", "command" : "off", "device_identifier" : "kamar depan"}[EOS]\nMatikan lampu depan\n>{"device_type" : "lamp", "command" : "off", "device_identifier" : "depan"}[EOS]\nTolong nyalakan komputer di dapur\n>{"device_type" : "PC", "command" : "on", "device_identifier" : "dapur"}[EOS]\nNyalakan TV di tempat tidur\n>{"device_type" : "TV", "command" : "on", "device_identifier" : "Tempat Tidur"}[EOS]\nMatikan microwave dapur\n>{"device_type" : "microwave", "command" : "off", "device_identifier" : "dapur"}[EOS]\ntolong nyalakan device nomer satu\n>{"device_type" : "device", "command" : "on", "device_identifier" : "satu"}[EOS]\nnyalakan oven di ruang tamu\n>\n'
